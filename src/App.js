@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { Route } from "react-router";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Activities from "./components/Activities";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Routines from "./components/Routines";
+import MyRoutines from "./components/MyRoutines";
+import BASE_URL from "./Util";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [routines, setRoutines] = useState([]);
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return setUser(null);
+    }
+    const fetchUser = async () => {
+      const response = await fetch(`${BASE_URL}/users/me`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      setUser({ id: data.id, username: data.username, token });
+    };
+    fetchUser();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar setUser={setUser} user={user} />
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/routines">
+        <Routines
+          setUser={setUser}
+          user={user}
+          routines={routines}
+          setRoutines={setRoutines}
+        />
+      </Route>
+      <Route path="/my-routines">
+        <MyRoutines
+          user={user}
+          setUser={setUser}
+          setRoutines={setRoutines}
+          routines={routines}
+        />
+      </Route>
+      <Route path="/activities">
+        <Activities setUser={setUser} user={user} />
+      </Route>
+      <Route path="/login">
+        <Login setUser={setUser} />
+      </Route>
+      <Route path="/register">
+        <Register setUser={setUser} />
+      </Route>
+    </>
   );
 }
 

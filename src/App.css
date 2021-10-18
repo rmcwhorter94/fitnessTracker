@@ -1,38 +1,242 @@
-.App {
-  text-align: center;
+.body {
+  background-color: #992199a1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  background-color: #992199a1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navBar {
+  background-image: linear-gradient(to right, limegreen 0%, purple 100%);
+  height: 100px;
+  width: 100%;
+  display: inline-flex;
+}
+.navHome {
+  font-size: 34px;
+  margin-top: 23px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navRoutines {
+  font-size: 34px;
+  margin-top: 23px;
+}
+
+.navRoutines .navLink:hover {
+  color: darkmagenta;
+}
+
+.navActivities {
+  font-size: 34px;
+  margin-top: 23px;
+}
+
+.navActivities .navLink:hover {
+  color: darkmagenta;
+}
+
+.navLogin {
+  font-size: 34px;
+  margin-top: 23px;
+}
+
+.navRegister {
+  font-size: 34px;
+  margin-top: 23px;
+}
+
+.navMyRoutines {
+  font-size: 34px;
+  margin-top: 23px;
+}
+
+.navLogout {
+  font-size: 34px;
+  margin-top: 23px;
+  color: purple;
+}
+.navLogout .out {
+  color: limegreen;
+}
+
+/* #adding {
+  background-color: orange;
+} */
+#addingRoutines {
+  color: aqua;
+}
+
+.clickRoutines {
+  color: aqua;
+}
+
+span {
+  background-color: pink;
+}
+
+.navLink {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navLink:hover {
+  color: mediumorchid;
+  /* background-color: aqua; */
+  cursor: crosshair;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#adding {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#addingRoutines {
+  background-color: gold;
+  color: purple;
+  border: 2px solid purple;
+}
+
+#loginPassword:hover {
+  height: 38px;
+  width: 130px;
+  background-color: purple;
+  color: gold;
+  border: 2px solid gold;
+  cursor: crosshair;
+}
+
+.clickRoutines {
+  background-color: green;
+  color: magenta;
+}
+
+#Links {
+  background-image: green;
+  color: Black;
+  font-size: 18px;
+  display: inline-table;
+  background-color: aquamarine;
+  width: 28%;
+  text-align: center;
+  /* height: 61px; */
+  border: 3px solid black;
+  position: relative;
+  margin-top: 0%;
+}
+
+#logout {
+  color: white;
+}
+
+#register {
+  height: 38px;
+  width: 130px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: purple;
+  display: inline-block;
+  color: greenyellow;
+}
+
+.clickRoutines {
+  height: 38px;
+  width: 130px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: purple;
+  display: inline-block;
+  color: greenyellow;
+}
+
+.clickRoutines:hover {
+  height: 38px;
+  width: 130px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: limegreen;
+  display: inline-block;
+  color: darkmagenta;
+}
+
+#password {
+  background-color: greenyellow;
+  color: purple;
+  border: 2px solid black;
+}
+
+#password:hover {
+  height: 38px;
+  width: 130px;
+  background-color: purple;
+  color: greenyellow;
+  cursor: crosshair;
+}
+
+#username:hover {
+  height: 38px;
+  width: 130px;
+  background-color: greenyellow;
+  color: purple;
+  cursor: crosshair;
+}
+
+#username {
+  background-color: purple;
+  color: greenyellow;
+  border: 2px solid black;
+}
+
+#credentials {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login {
+  height: 38px;
+  width: 130px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: purple;
+  display: inline-block;
+  color: greenyellow;
+}
+
+#login {
+  height: 38px;
+  width: 130px;
+  background-color: greenyellow;
+  display: inline-block;
+  color: purple;
+  cursor: crosshair;
+}
+
+#loginPassword {
+  background-color: black;
+  color: gold;
+  border: 2px solid gold;
+}
+
+#loginPassword:hover {
+  height: 38px;
+  width: 130px;
+  background-color: gold;
+  color: black;
+  border: 2px solid black;
+  cursor: crosshair;
+}
+
+#loginUsername:hover {
+  height: 38px;
+  width: 130px;
+  background-color: black;
+  color: gold;
+  cursor: crosshair;
+  border: 2px solid gold;
+}
+
+#loginUsername {
+  background-color: gold;
+  color: black;
+  border: 2px solid black;
 }
